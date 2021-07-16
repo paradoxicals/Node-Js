@@ -1,0 +1,14 @@
+{
+  "name": "first_nodejs_project",
+  "version": "1.0.0",
+  "description": "First Node.js project. It can be simple but I needed to start somewhere, right?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Serkan Danışan <serkan.danisan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-red": "^0.1.1"
+  }
+}
