@@ -1,5 +1,6 @@
 const red = require('ansi-red');
 const Person = require('./people');
+const Database = require('./database');
 
 console.log("Hello world from Turkey");
 //D:
@@ -17,4 +18,8 @@ const diego = new Person('Diego',30);
 
 const learners = [serkan, diego];
 
-console.log(learners);
+Database.save(learners);
+
+const loadedFile = Database.load();
+
+console.log(loadedFile[0]);
