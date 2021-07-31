@@ -1,9 +1,9 @@
 const red = require('ansi-red');
-const Person = require('./people');
+const Person = require('./person');
 const Database = require('./database');
 
 console.log("Hello world from Turkey");
-//D:
+
 
 const add = (num1 , num2) => num1 + num2;
 
@@ -20,6 +20,20 @@ const learners = [serkan, diego];
 
 Database.save(learners);
 
-const loadedFile = Database.load();
+const loadedPersons = Database.load();
 
-console.log(loadedFile[0]);
+//Casting as a object
+const firstPerson = new Person(loadedPersons[0].name, loadedPersons[0].age);
+
+const secondPerson = Person.create(loadedPersons[1]);
+
+firstPerson.sayName();
+secondPerson.sayName();
+
+//Use map function on objects
+//Get an array, apply the logic and return an array
+const convertedPersons = loadedPersons.map(Person.create);
+
+convertedPersons.forEach(element => {
+    element.sayName();
+});
