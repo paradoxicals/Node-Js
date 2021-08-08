@@ -1,9 +1,12 @@
 const fileSystem = require('fs');
 
-exports.save = (people)=>{
-    fileSystem.writeFileSync('./data.json',JSON.stringify(people));
+exports.save = (people,cb)=>{
+    setTimeout(()=>{
+    //The default one is async
+    fileSystem.writeFile('./data.json',JSON.stringify(people),cb);
+    },5000);
 }
     
 exports.load = () => {
-    return JSON.parse(fileSystem.readFileSync('./data.json','utf8'));
+    return JSON.parse(fileSystem.readFile('./data.json','utf8'));
 }

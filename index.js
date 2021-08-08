@@ -18,7 +18,9 @@ const diego = new Person('Diego',30);
 
 const learners = [serkan, diego];
 
-Database.save(learners);
+Database.save(learners,(err)=>{
+    console.log(err);
+});
 
 const loadedPersons = Database.load();
 
