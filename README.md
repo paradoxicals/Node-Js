@@ -8,4 +8,6 @@
 
 *Use Promise, reject and resolve
 
+*Async functions
+
 
